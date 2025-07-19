@@ -1,0 +1,433 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Li Massage Therapy | Registered Massage Therapist</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        
+        :root {
+            --primary: #1a1a1a;
+            --secondary: #333;
+            --accent: #8e7c68;
+            --light: #f9f9f9;
+            --text: #333;
+            --text-light: #777;
+            --border: #e0e0e0;
+        }
+        
+        body {
+            background-color: #ffffff;
+            color: var(--text);
+            line-height: 1.6;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        
+        header {
+            padding: 2rem 0;
+            border-bottom: 1px solid var(--border);
+            margin-bottom: 2rem;
+        }
+        
+        .header-content {
+            text-align: center;
+        }
+        
+        .name {
+            font-size: 2.2rem;
+            font-weight: 700;
+            color: var(--primary);
+            margin-bottom: 0.5rem;
+        }
+        
+        .title {
+            font-size: 1.1rem;
+            color: var(--accent);
+            font-weight: 500;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            margin-bottom: 1rem;
+        }
+        
+        .cta-button {
+            display: inline-block;
+            background-color: var(--primary);
+            color: white;
+            padding: 1rem 2rem;
+            border-radius: 4px;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 1.1rem;
+            margin: 1rem 0;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+        }
+        
+        .cta-button:hover {
+            background-color: var(--accent);
+            transform: translateY(-2px);
+            box-shadow: 0 6px 12px rgba(0,0,0,0.15);
+        }
+        
+        .cta-button i {
+            margin-right: 10px;
+        }
+        
+        .section {
+            margin: 3rem 0;
+            padding: 2rem 0;
+        }
+        
+        .section-title {
+            font-size: 1.8rem;
+            color: var(--primary);
+            margin-bottom: 2rem;
+            padding-bottom: 0.5rem;
+            border-bottom: 3px solid var(--accent);
+            display: inline-block;
+        }
+        
+        .about-content {
+            background-color: var(--light);
+            padding: 2rem;
+            border-radius: 8px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+            margin-bottom: 2rem;
+        }
+        
+        .about-content p {
+            margin-bottom: 1.5rem;
+            line-height: 1.8;
+        }
+        
+        .highlight {
+            background-color: #fff8e1;
+            padding: 0.3rem 0.5rem;
+            border-radius: 4px;
+            font-weight: 500;
+        }
+        
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin-top: 2rem;
+        }
+        
+        .service-card {
+            padding: 1.5rem;
+            border: 1px solid var(--border);
+            border-radius: 8px;
+            transition: all 0.3s ease;
+        }
+        
+        .service-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 25px rgba(0,0,0,0.08);
+            border-color: var(--accent);
+        }
+        
+        .service-card i {
+            font-size: 2.5rem;
+            color: var(--accent);
+            margin-bottom: 1rem;
+        }
+        
+        .service-card h3 {
+            font-size: 1.3rem;
+            margin-bottom: 1rem;
+            color: var(--primary);
+        }
+        
+        .pricing-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin-top: 2rem;
+        }
+        
+        .pricing-card {
+            border: 1px solid var(--border);
+            border-radius: 8px;
+            overflow: hidden;
+        }
+        
+        .pricing-header {
+            background-color: var(--primary);
+            color: white;
+            padding: 1.5rem;
+            text-align: center;
+        }
+        
+        .pricing-header h3 {
+            font-size: 1.5rem;
+            margin-bottom: 0.5rem;
+        }
+        
+        .pricing-body {
+            padding: 1.5rem;
+        }
+        
+        .price-item {
+            display: flex;
+            justify-content: space-between;
+            padding: 1rem 0;
+            border-bottom: 1px solid var(--border);
+        }
+        
+        .price-item:last-child {
+            border-bottom: none;
+        }
+        
+        .price-name {
+            font-weight: 500;
+        }
+        
+        .price-amount {
+            font-weight: 700;
+            color: var(--accent);
+        }
+        
+        .note {
+            margin-top: 1.5rem;
+            padding: 1rem;
+            background-color: #f5f5f5;
+            border-left: 4px solid var(--accent);
+            font-size: 0.95rem;
+            border-radius: 0 4px 4px 0;
+        }
+        
+        .contact-info {
+            background-color: var(--light);
+            padding: 2.5rem;
+            border-radius: 8px;
+            text-align: center;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+        }
+        
+        .phone-number {
+            display: block;
+            font-size: 2rem;
+            font-weight: 700;
+            color: var(--primary);
+            margin: 2rem 0;
+            text-decoration: none;
+            transition: all 0.3s ease;
+        }
+        
+        .phone-number:hover {
+            color: var(--accent);
+            transform: scale(1.05);
+        }
+        
+        .insurance-note {
+            background-color: #e8f5e9;
+            padding: 1.5rem;
+            border-radius: 8px;
+            margin: 2rem 0;
+            text-align: left;
+        }
+        
+        .payment-methods {
+            display: flex;
+            justify-content: center;
+            gap: 2rem;
+            margin: 2rem 0;
+            flex-wrap: wrap;
+        }
+        
+        .payment-method {
+            display: flex;
+            align-items: center;
+            gap: 0.8rem;
+            font-weight: 500;
+            font-size: 1.1rem;
+        }
+        
+        .payment-method i {
+            color: var(--accent);
+            font-size: 1.5rem;
+        }
+        
+        footer {
+            text-align: center;
+            padding: 2rem 0;
+            margin-top: 3rem;
+            border-top: 1px solid var(--border);
+            color: var(--text-light);
+            font-size: 0.9rem;
+        }
+        
+        @media (max-width: 768px) {
+            .name {
+                font-size: 1.8rem;
+            }
+            
+            .phone-number {
+                font-size: 1.5rem;
+            }
+            
+            .section-title {
+                font-size: 1.5rem;
+            }
+            
+            .contact-info {
+                padding: 1.5rem;
+            }
+        }
+        
+        @media (max-width: 480px) {
+            .name {
+                font-size: 1.6rem;
+            }
+            
+            .cta-button {
+                padding: 0.8rem 1.5rem;
+                font-size: 1rem;
+            }
+            
+            .phone-number {
+                font-size: 1.3rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <div class="header-content">
+            <h1 class="name">Li Massage Therapy</h1>
+            <div class="title">Registered Massage Therapist</div>
+            <a href="tel:289-621-6868" class="cta-button">
+                <i class="fas fa-phone-alt"></i> Call Now: (289) 621-6868
+            </a>
+        </div>
+    </header>
+
+    <!-- About Section -->
+    <section class="section">
+        <h2 class="section-title">About Me</h2>
+        <div class="about-content">
+            <p>Hello, I'm <span class="highlight">Li</span>, a male massage therapist registered with the College of Massage Therapists of Ontario. With over <span class="highlight">2 years of professional experience</span>, I specialize in providing therapeutic massage treatments to help you achieve relaxation, pain relief, and improved well-being.</p>
+            <p>I practice from my comfortable home clinic located conveniently <span class="highlight">near Scarborough Town Centre</span>, offering a peaceful environment for your treatment sessions. My approach combines technical expertise with a personalized touch to address your specific needs.</p>
+            <p>As a healthcare professional, I maintain the highest standards of cleanliness, confidentiality, and therapeutic care. Your health and comfort are my top priorities during every session.</p>
+        </div>
+    </section>
+
+    <!-- Services Section -->
+    <section class="section">
+        <h2 class="section-title">My Services</h2>
+        <div class="services-grid">
+            <div class="service-card">
+                <i class="fas fa-spa"></i>
+                <h3>Relaxation Massage</h3>
+                <p>Gentle techniques to relieve stress and promote overall wellness. Perfect for those looking to unwind and rejuvenate.</p>
+            </div>
+            <div class="service-card">
+                <i class="fas fa-hand-holding-heart"></i>
+                <h3>Deep Tissue Massage</h3>
+                <p>Targeted pressure to release chronic muscle tension and pain. Ideal for addressing specific problem areas.</p>
+            </div>
+            <div class="service-card">
+                <i class="fas fa-shoe-prints"></i>
+                <h3>Reflexology</h3>
+                <p>Specialized foot therapy to stimulate healing throughout the body. Enhances circulation and reduces tension.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Pricing Section -->
+    <section class="section">
+        <h2 class="section-title">Pricing</h2>
+        <div class="pricing-container">
+            <div class="pricing-card">
+                <div class="pricing-header">
+                    <h3>Incall Services</h3>
+                    <p>At my Scarborough clinic</p>
+                </div>
+                <div class="pricing-body">
+                    <div class="price-item">
+                        <div class="price-name">Cash Massage (60 min)</div>
+                        <div class="price-amount">$60</div>
+                    </div>
+                    <div class="price-item">
+                        <div class="price-name">RMT Massage (60 min)</div>
+                        <div class="price-amount">$100 + HST</div>
+                    </div>
+                    <div class="note">
+                        <p>Conveniently located near Scarborough Town Centre with easy access and parking.</p>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="pricing-card">
+                <div class="pricing-header">
+                    <h3>Outcall Services</h3>
+                    <p>Throughout Greater Toronto Area</p>
+                </div>
+                <div class="pricing-body">
+                    <div class="price-item">
+                        <div class="price-name">Cash Massage (60 min)</div>
+                        <div class="price-amount">$100</div>
+                    </div>
+                    <div class="price-item">
+                        <div class="price-name">RMT Massage (60 min)</div>
+                        <div class="price-amount">$100 + HST</div>
+                    </div>
+                    <div class="note">
+                        <p>Available anywhere in the GTA. Additional charges may apply for locations beyond 20km from Scarborough Town Centre.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section class="section">
+        <h2 class="section-title">Book Your Appointment</h2>
+        <div class="contact-info">
+            <p>Ready to experience therapeutic relief? Contact me today to schedule your appointment.</p>
+            <a href="tel:289-621-6868" class="phone-number">
+                <i class="fas fa-phone-alt"></i> (289) 621-6868
+            </a>
+            <p>I'm available for appointments 7 days a week. Please call to discuss availability.</p>
+            
+            <div class="insurance-note">
+                <h3><i class="fas fa-file-invoice"></i> Insurance & Billing Information</h3>
+                <p>I provide detailed invoices for all RMT sessions which you can submit to your insurance provider for reimbursement. Please note that I <strong>do not offer direct billing</strong>. All necessary information for insurance claims will be provided on your receipt.</p>
+            </div>
+            
+            <div class="payment-methods">
+                <div class="payment-method">
+                    <i class="fas fa-money-bill-wave"></i>
+                    <span>Cash</span>
+                </div>
+                <div class="payment-method">
+                    <i class="fas fa-mobile-alt"></i>
+                    <span>E-Transfer</span>
+                </div>
+            </div>
+            
+            <a href="tel:289-621-6868" class="cta-button">
+                <i class="fas fa-calendar-check"></i> Call to Book Now
+            </a>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <p>Li Massage Therapy | Registered Massage Therapist</p>
+        <p>Home Clinic: Near Scarborough Town Centre, Toronto</p>
+        <p>&copy; 2023 All Rights Reserved</p>
+    </footer>
+</body>
+</html>
